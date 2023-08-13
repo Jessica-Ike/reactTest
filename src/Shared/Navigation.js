@@ -2,8 +2,8 @@ import React from 'react';
 import SideNavigation from '@cloudscape-design/components/side-navigation';
 
 const items = [
-    { type: 'link', text: 'All Cars', href: '/' },
-    { type: 'link', text: 'Dashboard', href: '/' },
+    { type: 'link', text: 'Home', href: '/' },
+    { type: 'link', text: 'Cars', href: '/cars' },
 ];
 
 export default function Navigation() {

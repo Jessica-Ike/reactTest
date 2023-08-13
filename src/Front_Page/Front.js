@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import Container from "@cloudscape-design/components/container";
-import SpaceBetween from "@cloudscape-design/components/space-between";
-import Input from "@cloudscape-design/components/input";
-import Button from "@cloudscape-design/components/button";
-import AppLayout from '@cloudscape-design/components/app-layout';
-import BreadcrumbGroup from '@cloudscape-design/components/breadcrumb-group';
+import { Container, SpaceBetween, Input, Button, AppLayout, BreadcrumbGroup } from "@cloudscape-design/components";
 import Navigation from "../Shared/Navigation";
 import Topnavigation from "../Shared/TopNavigation";
 import '../App.css';
 
-export default class Front extends React.Component{
-  render(){
+//This page will be the welcome page, where viewers can see some important buisness related stuff
+//The other page, cars, will show users all cars that are avaliable
+//The admin page will allow the admin to add edit or delete cars in the system 
+
+export default class Front extends React.Component {
+	render() {
 		return (
 			<>
 				<div>
@@ -35,16 +34,22 @@ export default class Front extends React.Component{
 }
 
 const Breadcrumbs = () => (
-	<BreadcrumbGroup 
+	<BreadcrumbGroup
 		items={[
 			{ text: 'Home', href: '/' },
 		]}
 	/>
 );
 
-const Content = () => { 
+
+const Content = () => {
 	const [value, setValue] = useState("");
-	return(
+
+	const onClickButton = () => {
+		alert(value);
+	}
+
+	return (
 		<>
 			<SpaceBetween size="m">
 				<Container>
@@ -52,9 +57,9 @@ const Content = () => {
 						<span>Start editing to see some magic happen</span>
 						<Input
 							value={value}
-							onChange={(event) => setValue(event.detail.value)}
+							onChange={(e) => setValue(e.detail.value)}
 						/>
-						<Button variant="primary">Click me</Button>
+						<Button variant="primary" onClick={onClickButton}>Submit</Button>
 					</SpaceBetween>
 				</Container>
 			</SpaceBetween>
